@@ -1,0 +1,1 @@
+The 57 exercises are come from the book "**Exercises for Programmers: 57 Challenges to Develop Your Coding Skills**" by Brian P. Hogan(브라이언 호건. 코딩 트레이닝: 새로운 언어를 배울 때 다시 풀어보는 57개 연습문제. 정기훈 옮김(인사이트, 2016). ISBN 9788966261857). I'm using this book to practice Python.
