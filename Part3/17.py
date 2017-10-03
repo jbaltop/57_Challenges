@@ -10,13 +10,9 @@ g = gender = input("gender(m/f): ")
 h = elapsed_time_to_drink_alcohol = float(input("elapsed time to drink alcohol(h): "))
 bac_limit = 0.08
 
-if gender.lower() == 'm':
+if gender.lower() == 'm' or gender.lower() == "male":
 	r = 0.73
-elif gender.lower() == "male":
-	r = 0.73
-elif gender.lower() == 'f':
-	r = 0.6
-elif gender.lower() == "female":
+elif gender.lower() == 'f' or gender.lower() == "female":
 	r = 0.6
 else:
 	print("please enter a correct gender.")
