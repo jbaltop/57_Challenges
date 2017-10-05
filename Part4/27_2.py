@@ -4,7 +4,7 @@
 # 프로세스: 입력 받은 것이 규칙에 맞는지 점검
 # 출력: 잘못된 데이터의 여부
 
-# TODO: 현재는 list 2개를 사용 --> 향후 tuple을 사용해 list 1개로 줄여야 함
+# TODO: 현재는 list 2개를 사용 --> 향후 list 1개로 줄여야 함
 
 question_messages = [ "\nfirst name: ", "last name: ", "ZIP code: ", "employee ID(AA-0000): " ]
 
