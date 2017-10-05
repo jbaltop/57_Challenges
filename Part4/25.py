@@ -21,7 +21,7 @@ symbols = {'!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.',
 def is_it_included(string, type_of_data):
 	character_list = []
 	for i in string:
-		if i in type_of_data:
+		if i.lower() in type_of_data:
 			character_list.append(i)
 	if character_list == []:
 		return False
