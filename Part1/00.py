@@ -1,5 +1,11 @@
 #!/usr/local/bin/python3
 
+# 팁 계산기
+
+# 입력: 가격, 팁 비율
+# 프로세스: 팁 계산
+# 출력: 팁, 전체 가격
+
 price = float(input("price($): "))
 tip_rate = float(input("tip rate(%): "))
 

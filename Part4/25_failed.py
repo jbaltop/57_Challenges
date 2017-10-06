@@ -1,10 +1,12 @@
 #!/usr/local/bin/python3
 
-# logic bug
+# 암호 길이 점검
 
 # 입력: 암호(비밀번호)
 # 프로세스: 암호의 복잡도 계산
 # 출력: 암호의 복잡도
+
+# logic bug
 
 password = input("\npassword: ")
 

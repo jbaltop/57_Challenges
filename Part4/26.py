@@ -1,5 +1,7 @@
 #!/usr/local/bin/python3
 
+# 카드 대금 상환 기간
+
 # 입력: 총 대금(b), 연이율(apr, annual percentage rate), 월 상환 금액(p)
 # 프로세스: 상환에 소요되는 개월 수 계산
 # 출력: 상환에 소요되는 개월 수
