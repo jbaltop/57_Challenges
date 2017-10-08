@@ -17,7 +17,7 @@ messages = {
 	"quantity": "Quantity on hand: {}",
 	}
 
-fin = open('44.js', 'rt')
+fin = open('44.json', 'rt')
 product_json = fin.read()
 fin.close()
 
