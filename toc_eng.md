@@ -1,4 +1,4 @@
-# 목차
+# Table of Contents
 
 * [Part1](https://github.com/jbaltop/57_Challenges/tree/master/Part1)
 	* [1	Saying Hello](https://github.com/jbaltop/57_Challenges/blob/master/Part1/01.py)
