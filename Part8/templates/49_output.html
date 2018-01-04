@@ -1,0 +1,8 @@
+<html>
+	<body>
+		Photos about "{{ keyword }}"<br>
+		{% for link in link_list %}
+		<a href="{{ link }}"><img src="{{ link }}" height="100"></a>
+		{% endfor %}
+	</body>
+</html>
