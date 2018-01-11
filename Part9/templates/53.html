@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<h1>Todo List</h1>
+		<form method=POST action=''>
+			<ul>
+				<li>Type new todos in the text area.
+				<li>Fill in the checkboxes for finished todos.
+				<li>Press Update to refresh.
+			</ul>
+			<textarea name=new_todos cols=32 rows=4></textarea><br><br>
+			{% for todo in todo_list %}
+			<input type=checkbox name=todo value="{{ todo }}">{{ todo }}<br>
+			{% endfor %}
+			<br>
+			<input type=submit value="Update">
+		</form>
+	</body>
+</html>
