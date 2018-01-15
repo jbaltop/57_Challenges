@@ -12,7 +12,7 @@ from flask import Flask, render_template, request
 import time
 
 key = "<path to json file>"
-database_url = "https://<your filebase project name>.firebaseio.com"
+database_url = "https://<your firebase project name>.firebaseio.com"
 cred = credentials.Certificate(key)
 myapp = firebase_admin.initialize_app(cred, {'databaseURL' : database_url})
 
