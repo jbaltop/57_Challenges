@@ -99,11 +99,11 @@ def guess_number(difficulty, input_number, answer_number):
 			return guess_result
 
 is_play_again = True
-guessed_list = []
 
 print(messages["start"])
 
 while is_play_again:
+	guessed_list = []
 	while True:
 		difficulty = input(messages["difficulty"])
 		if is_it_appropriate_difficulty(difficulty):
