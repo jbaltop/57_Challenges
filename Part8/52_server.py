@@ -4,7 +4,7 @@ import time
 from flask import Flask, request
 from flask_restful import Resource, Api
 from json import dumps
-from flask.ext.jsonpify import jsonify
+from flask.ext.jsonify import jsonify
 
 app = Flask(__name__)
 api = Api(app)
