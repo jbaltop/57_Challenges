@@ -1,0 +1,19 @@
+<html>
+	<body>
+		<h1>Text Sharing</h1>
+		<h2>New text</h2>
+		<form method="POST" action="">
+			Title<br>
+			<input type="text" name="new_text_title" size=50><br><br>
+			Content<br>
+			<textarea name="new_text_content" cols=50 rows=8></textarea><br><br>
+			<input type="submit" value="Save">
+		</form>
+		<h2>Shared Texts</h2>
+		<ul>
+			{% for text in url_list %}
+			<li><a href="{{ url_for('view', url=text[0]) }}">{{ text[1] }}</a>
+			{% endfor %}
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<html>
+	<body>
+		<h1>{{ title }}</h1>
+		{% for content in content_list %}
+		{{ content }}<br>
+		{% endfor %}
+		<br><form method="POST" action="">
+			<input type="submit" value="Edit">
+		</form>
+	</body>
+</html>

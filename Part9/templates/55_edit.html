@@ -1,0 +1,9 @@
+<html>
+	<body>
+		<form method="POST" action="">
+			<input type="text" name="title" size=50 value="{{ title }}"><br><br>
+			<textarea name="content" cols=50 rows=8>{% for content in content_list %}{{ content + '\r\n' }}{% endfor %}</textarea><br><br>
+			<input type="submit" value="Save">
+		</form>
+	</body>
+</html>
