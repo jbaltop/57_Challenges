@@ -1,2 +1,4 @@
 Private/
-env/
+.idea/
+.vscode/
+*.swp
