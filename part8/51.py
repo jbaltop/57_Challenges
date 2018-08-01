@@ -2,17 +2,7 @@ import firebase_admin
 from firebase_admin import credentials, db
 import sys
 import datetime
-import json
-
-key = "<path to json file>"
-database_url = "https://<your firebase project name>.firebaseio.com"
-
-
-cred = credentials.Certificate(key)
-myapp = firebase_admin.initialize_app(cred, {'databaseURL' : database_url})
-
-if len(sys.argv) <= 1:
-    sys.argv.append('')
+import configparser
 
 def write_note(content):
     root = db.reference("/")
@@ -45,6 +35,17 @@ def do_command(command, content):
         read_note()
 
 def main():
+    config = configparser.ConfigParser()
+    config.read('../private/51.ini')
+
+    key = config['firebase']['key_path']
+    database_url = config['firebase']['database_url']
+    cred = credentials.Certificate(key)
+    myapp = firebase_admin.initialize_app(cred, {'databaseURL': database_url})
+
+    if len(sys.argv) <= 1:
+        sys.argv.append('')
+
     command = sys.argv[1]
     content_list = sys.argv[2:]
     content = ' '.join(content_list)

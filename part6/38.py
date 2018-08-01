@@ -1,10 +1,3 @@
-messages = {
-    "numbers": "\nEnter a list of numbers, separated by spaces: ",
-    "even_numbers": "\nThe even numbers are: ",
-    }
-
-numbers = input(messages["numbers"])
-
 def make_list(arg):
     return arg.split(' ')
 
@@ -15,11 +8,21 @@ def filter_even_numbers(arg):
             even_numbers.append(i)
     return even_numbers
 
-even_numbers = filter_even_numbers(make_list(numbers))
+def main():
+    messages = {
+        "numbers": "\nEnter a list of numbers, separated by spaces: ",
+        "even_numbers": "\nThe even numbers are: ",
+    }
 
-print(messages["even_numbers"], end = '')
+    numbers = input(messages["numbers"])
 
-for even_number in even_numbers:
-    print(even_number, end = ' ')
+    even_numbers = filter_even_numbers(make_list(numbers))
 
-print('\n')
+    print(messages["even_numbers"], end='')
+
+    for even_number in even_numbers:
+        print(even_number, end=' ')
+
+    print('\n')
+
+main()

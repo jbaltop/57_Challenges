@@ -5,19 +5,10 @@ import string
 import random
 import configparser
 
-config = configparser.ConfigParser()
-config.read('Private/55_config.ini')
-
-key = config['firebase']['key_path']
-database_url = config['firebase']['database_url']
-print(key, database_url)
-cred = credentials.Certificate(key)
-myapp = firebase_admin.initialize_app(cred, {'databaseURL': database_url})
-
 def run_server():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='../templates')
 
-    @app.route('/', methods = ['GET', 'POST'])
+    @app.route('/', methods=['GET', 'POST'])
     def index():
         if request.method == 'GET':
             text_dict = read_text()
@@ -109,7 +100,14 @@ def delete_text(url):
     db.reference('/text/').child(text_dict[url][0]).delete()
 
 def main():
+    config = configparser.ConfigParser()
+    config.read('../private/55.ini')
+
+    key = config['firebase']['key_path']
+    database_url = config['firebase']['database_url']
+    cred = credentials.Certificate(key)
+    myapp = firebase_admin.initialize_app(cred, {'databaseURL': database_url})
+
     run_server()
 
-if __name__ == '__main__':
-    main()
+main()

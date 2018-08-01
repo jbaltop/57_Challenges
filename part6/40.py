@@ -1,22 +1,28 @@
-def printf(format, *args):
-    sys.stdout.write(format % args)
+import sqlite3
+import sys
 
-messages = {
-    "keyword": "Enter a search string: ",
-    }
+def main():
+    def printf(format, *args):
+        sys.stdout.write(format % args)
 
-keyword = input(messages["keyword"])
+    messages = {
+        "keyword": "Enter a search string: ",
+        }
 
-db = sqlite3.connect('database/sample')
+    keyword = input(messages["keyword"])
 
-cursor = db.cursor()
+    db = sqlite3.connect('../data/39_40.sqlite3')
 
-cursor.execute('''SELECT PRINTF("%-25s| %-25s| %-25s", FIRSTNAME || ' ' || LASTNAME, POSITION, SEPARATIONDATE) FROM EMPLOYEE WHERE FIRSTNAME LIKE "%{}%" OR LASTNAME LIKE "%{}%"'''.format(keyword, keyword))
+    cursor = db.cursor()
 
-printf("%-25s| %-25s| %-25s\n", "Name", "Position", "Separation Date")
-print("-"*25+'+'+"-"*26+"+"+"-"*16)
+    cursor.execute('''SELECT PRINTF("%-25s| %-25s| %-25s", FIRSTNAME || ' ' || LASTNAME, POSITION, SEPARATIONDATE) FROM EMPLOYEE WHERE FIRSTNAME LIKE "%{}%" OR LASTNAME LIKE "%{}%"'''.format(keyword, keyword))
 
-for row in cursor:
-    print(row[0])
+    printf("%-25s| %-25s| %-25s\n", "Name", "Position", "Separation Date")
+    print("-"*25+'+'+"-"*26+"+"+"-"*16)
 
-db.close()
+    for row in cursor:
+        print(row[0])
+
+    db.close()
+
+main()

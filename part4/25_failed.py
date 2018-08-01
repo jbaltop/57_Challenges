@@ -1,27 +1,29 @@
-password = input("\npassword: ")
+def password_validator(password):
+    message1 = "\nThe password '" + password + "' is a very weak password."
+    message2 = "\nThe password '" + password + "' is a weak password."
+    message3 = "\nThe password '" + password + "' is a strong password."
+    message4 = "\nThe password '" + password + "' is a very strong password."
+    message5 = "\nThe password '" + password + "' is a normal password."
 
-message1 = "\nThe password '" + password + "' is a very weak password."
-message2 = "\nThe password '" + password + "' is a weak password."
-message3 = "\nThe password '" + password + "' is a strong password."
-message4 = "\nThe password '" + password + "' is a very strong password."
-message5 = "\nThe password '" + password + "' is a normal password."
-
-def password_validator(arg):
-    if len(arg) < 8:
-        if arg.isdigit() == True:
+    if len(password) < 8:
+        if password.isdigit() == True:
             answer = message1
-        elif arg.isalpha() == True:
+        elif password.isalpha() == True:
             answer = message2
         else:
             answer = message5
     else:
-        if arg.isdigit() == True or arg.isalpha() == True:
+        if password.isdigit() == True or password.isalpha() == True:
             answer = message5
         else:
-            if arg.isalnum() == True:
+            if password.isalnum() == True:
                 answer = message3
             else:
                 answer = message4
     print(answer)
 
-password_validator(password)
+def main():
+    password = input("\npassword: ")
+    password_validator(password)
+
+main()

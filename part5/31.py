@@ -1,10 +1,8 @@
-messages = [ "\nage: ", "resting pulse: " ]
-
 def calculate_target_heart_rate(age, resting_pulse):
     intensity = 55
     intensity_and_rate_lists = []
     while intensity <= 95:
-        thr = target_heart_rate = round((((220 - age) - resting_pulse) * intensity / 100) + resting_pulse)
+        thr = round((((220 - age) - resting_pulse) * intensity / 100) + resting_pulse)
         intensity_and_rate_list = [intensity, thr]
         intensity_and_rate_lists.append(intensity_and_rate_list)
         intensity += 5
@@ -17,6 +15,11 @@ def print_chart(arg):
         chart = chart + "    {}%    | {}  bpm  \n".format(str(pair[0]), str(pair[1]))
     print(chart)
 
-result = calculate_target_heart_rate(int(input(messages[0])), int(input(messages[1])))
+def main():
+    messages = ["\nage: ", "resting pulse: "]
 
-print_chart(result)
+    result = calculate_target_heart_rate(int(input(messages[0])), int(input(messages[1])))
+
+    print_chart(result)
+
+main()

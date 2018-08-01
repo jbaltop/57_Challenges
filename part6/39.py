@@ -1,28 +1,34 @@
-def printf(format, *args):
-    sys.stdout.write(format % args)
+import sqlite3
+import sys
 
-messages = {
-    "fieldname": "\nField Name(FirstName, LastName, Position, SeparationDate): ",
-    }
+def main():
+    def printf(format, *args):
+        sys.stdout.write(format % args)
 
-while True:
-    fieldname = input(messages["fieldname"])
-    if fieldname.lower() == 'firstname' or fieldname.lower() == 'lastname' or fieldname.lower() == 'position' or fieldname.lower() == 'separationdate':
-        break
-    else:
-        print("error: invalid field name.")
-        continue
+    messages = {
+        "fieldname": "\nField Name(FirstName, LastName, Position, SeparationDate): ",
+        }
 
-db = sqlite3.connect('database/sample')
+    while True:
+        fieldname = input(messages["fieldname"])
+        if fieldname.lower() == 'firstname' or fieldname.lower() == 'lastname' or fieldname.lower() == 'position' or fieldname.lower() == 'separationdate':
+            break
+        else:
+            print("error: invalid field name.")
+            continue
 
-cursor = db.cursor()
+    db = sqlite3.connect('../data/39_40.sqlite3')
 
-cursor.execute('''SELECT PRINTF("%-25s| %-25s| %-25s", FIRSTNAME || ' ' || LASTNAME, POSITION, SEPARATIONDATE) FROM EMPLOYEE ORDER BY {}'''.format(fieldname))
+    cursor = db.cursor()
 
-printf("%-25s| %-25s| %-25s\n", "Name", "Position", "Separation Date")
-print("-"*25+'+'+"-"*26+"+"+"-"*16)
+    cursor.execute('''SELECT PRINTF("%-25s| %-25s| %-25s", FIRSTNAME || ' ' || LASTNAME, POSITION, SEPARATIONDATE) FROM EMPLOYEE ORDER BY {}'''.format(fieldname))
 
-for row in cursor:
-    print(row[0])
+    printf("%-25s| %-25s| %-25s\n", "Name", "Position", "Separation Date")
+    print("-"*25+'+'+"-"*26+"+"+"-"*16)
 
-db.close()
+    for row in cursor:
+        print(row[0])
+
+    db.close()
+
+main()

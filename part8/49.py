@@ -29,13 +29,13 @@ def parse_xml():
     return link_list
 
 def run_server():
-    app = Flask(__name__)
+    app = Flask(__name__, template_folder='../templates')
 
     @app.route('/')
     def home():
         return render_template('49_input.html')
 
-    @app.route('/search', methods = ['POST'])
+    @app.route('/search', methods=['POST'])
     def search():
         search_word = request.form['search_word']
         make_image_xml_file(flickr_search(search_word))
@@ -47,5 +47,4 @@ def run_server():
 def main():
     run_server()
 
-if __name__ == "__main__":
-    main()
+main()

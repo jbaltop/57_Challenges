@@ -1,7 +1,7 @@
 def print_result(a, b):
     print("{} * {} = {}".format(a, b, a*b))
 
-def make_list():
+def main():
     a = 0
     while a <= 12:
         b = 0
@@ -10,4 +10,4 @@ def make_list():
             b += 1
         a += 1
 
-make_list()
+main()

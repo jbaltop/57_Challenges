@@ -1,11 +1,5 @@
 import re
 
-messages = {
-    "replaced": "{} '{}' are replaced with '{}'.",
-    "original": "The original content was:\n{}",
-    "changed": "The changed content is:\n{}",
-    }
-
 def read_file(filename):
     fin = open(filename, 'rt', encoding='utf-8')
     contents = fin.read()
@@ -25,11 +19,20 @@ def write_file(source, filename):
     fout.write(source)
     fout.close()
 
-content = read_file('45.txt')
-number_of_word = count_word('utilize', content)
-new_content = replace_word('utilize', 'use', content)
-write_file(new_content, '45-1.txt')
+def main():
+    messages = {
+        "replaced": "{} '{}' are replaced with '{}'.",
+        "original": "The original content was:\n{}",
+        "changed": "The changed content is:\n{}",
+    }
 
-print(messages["original"].format(content))
-print(messages["changed"].format(read_file('45-1.txt')))
-print(messages["replaced"].format(number_of_word, 'utilize', 'use'))
+    content = read_file('../data/45.txt')
+    number_of_word = count_word('utilize', content)
+    new_content = replace_word('utilize', 'use', content)
+    write_file(new_content, '45_out.txt')
+
+    print(messages["original"].format(content))
+    print(messages["changed"].format(read_file('45_out.txt')))
+    print(messages["replaced"].format(number_of_word, 'utilize', 'use'))
+
+main()

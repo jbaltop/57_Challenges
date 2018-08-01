@@ -1,7 +1,3 @@
-messages = {
-    "total": "Total of {} names",
-    }
-
 def file_to_list(filename):
     fin = open(filename, 'rt', encoding='utf-8')
     names = fin.readlines()
@@ -12,7 +8,11 @@ def order_name(names):
     return names.sort()
 
 def list_to_file(names):
-    fout = open('41-1.txt', 'wt', encoding='utf-8')
+    messages = {
+        "total": "Total of {} names",
+    }
+
+    fout = open('41_out.txt', 'wt', encoding='utf-8')
     print('\n' + messages["total"].format(len(names)))
     print('-'*17)
     for name in names:
@@ -27,8 +27,11 @@ def read_file(filename):
     fin.close()
     return content
 
-names = file_to_list('41.txt')
-order_name(names)
-list_to_file(names)
+def main():
+    names = file_to_list('../data/41.txt')
+    order_name(names)
+    list_to_file(names)
 
-print(read_file('41-1.txt'))
+    print(read_file('41_out.txt'))
+
+main()

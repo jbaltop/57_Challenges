@@ -1,14 +1,17 @@
-print("Username: Hello\nPassword: World")
+def main():
+    print("Username: Hello\nPassword: World")
 
-username = input("Username: ")
-password = input("Password: ")
+    username = input("Username: ")
+    password = input("Password: ")
 
-if username == "Hello":
-    if password == "World":
-        message = "\nWelcome, " + username + "!"
+    if username == "Hello":
+        if password == "World":
+            message = "\nWelcome, " + username + "!"
+        else:
+            message = "\nYour password is incorrect."
     else:
-        message = "\nYour password is incorrect."
-else:
-    message = "\nYour username or password is incorrect."
+        message = "\nYour username or password is incorrect."
 
-print(message)
+    print(message)
+
+main()

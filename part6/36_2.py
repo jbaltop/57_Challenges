@@ -1,40 +1,10 @@
-import math
-
-def calculate_average(arg):
-    total = 0
-    for number in arg:
-        total = total + number
-    average = total / len(arg)
-    return average
-
-def calculate_minimum(arg):
-    minimum = min(arg)
-    return minimum
-
-def calculate_maximum(arg):
-    maximum = max(arg)
-    return maximum
-
-def calculate_dispersion(arg):
-    average = calculate_average(arg)
-    sum = 0
-    for number in arg:
-        a = math.pow(number - average, 2)
-        sum = sum + a
-    dispersion = sum / len(arg)
-    return dispersion
-
-def calculate_standard_deviation(arg):
-    dispersion = calculate_dispersion(arg)
-    standard_deviation = math.sqrt(dispersion)
-    return standard_deviation
-
-
 def calculate_everything(arg):
-    average = calculate_average(arg)
-    minimum = calculate_minimum(arg)
-    maximum = calculate_maximum(arg)
-    standard_deviation = calculate_standard_deviation(arg)
+    import statistics
+
+    average = statistics.mean(arg)
+    minimum = min(arg)
+    maximum = max(arg)
+    standard_deviation = statistics.pstdev(arg)
     return [ average, minimum, maximum, standard_deviation ]
 
 def make_list(messages):

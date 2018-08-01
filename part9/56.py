@@ -43,5 +43,4 @@ def main():
     make_json_file(info_list)
     make_html_file(info_list)
 
-if __name__ == '__main__':
-    main()
+main()

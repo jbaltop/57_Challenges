@@ -1,7 +1,7 @@
 import random
 
 def read_question():
-    with open('trivia.txt', 'rt', encoding='utf-8') as fin:
+    with open('../data/57.txt', 'rt', encoding='utf-8') as fin:
         questions = fin.read()
         question_list = questions.split('\n')
         question_list.remove('')
@@ -49,5 +49,4 @@ def main():
     question_list = read_question()
     play_game(question_list)
 
-if __name__ == '__main__':
-    main()
+main()
