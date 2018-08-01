@@ -1,4 +1,3 @@
-Private/
+private/
+env/
 .idea/
-.vscode/
-*.swp
