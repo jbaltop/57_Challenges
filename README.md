@@ -8,5 +8,5 @@ The 57 challenges are come from the book "**Exercises for Programmers: 57 Challe
 
 ## Table of Contents
 
-* [English](https://github.com/jbaltop/57_Challenges/blob/master/toc_eng.md)
-* [한국어](https://github.com/jbaltop/57_Challenges/blob/master/toc_kor.md)
+* [English](docs/toc_eng.md)
+* [한국어](docs/toc_kor.md)
