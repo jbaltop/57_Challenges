@@ -1,11 +1,3 @@
-#!/usr/local/bin/python3
-
-# 퇴직 계산기
-
-# 입력: 현재 나이, 퇴직하고자 하는 나이
-# 프로세스: 퇴직하기까지 몇 년 남았는지, 퇴직하는 해는 몇 년이 되는지 계산
-# 프로세스: 계산 결과
-
 import datetime
 
 current_age = int(input("What is your current age? "))

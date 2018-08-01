@@ -1,11 +1,3 @@
-#!/usr/local/bin/python3
-
-# 단리 계산
-
-# 입력: 원금, 이자, 기간
-# 프로세스: 원리금 계산
-# 출력: 원리금
-
 p = principal = int(input("principal($): "))
 r = rate_of_interest = float(input("rate of interest(%): "))
 t = number_of_years = int(input("number of years: "))

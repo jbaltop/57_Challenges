@@ -1,60 +1,51 @@
-#!/usr/local/bin/python3
-
-# 플리커 사진 검색
-
-# 입력: https://www.flickr.com/services/feeds/docs/photos_public
-# https://api.flickr.com/services/feeds/photos_public.gne
-# 프로세스: 사진 검색
-# 출력: 검색어에 해당하는 사진
-
 import urllib.request
 import xml.etree.ElementTree as etree
 from flask import Flask, render_template, request
 
 def flickr_search(search_word):
 
-	url = "https://api.flickr.com/services/feeds/photos_public.gne?tags={}".format(search_word)
+    url = "https://api.flickr.com/services/feeds/photos_public.gne?tags={}".format(search_word)
 
-	image_xml = urllib.request.urlopen(url).read().decode("utf-8")
+    image_xml = urllib.request.urlopen(url).read().decode("utf-8")
 
-	return image_xml
+    return image_xml
 
 def make_image_xml_file(image_xml):
-	fout = open('49.xml', 'wt')
-	fout.write(image_xml)
-	fout.close
+    fout = open('49.xml', 'wt')
+    fout.write(image_xml)
+    fout.close
 
 def parse_xml():
-	tree = etree.parse('49.xml')
-	root = tree.getroot()
+    tree = etree.parse('49.xml')
+    root = tree.getroot()
 
-	all_links = tree.findall('//{http://www.w3.org/2005/Atom}link')
+    all_links = tree.findall('//{http://www.w3.org/2005/Atom}link')
 
-	link_list = []
-	for link in all_links:
-		if link.attrib['rel'] == 'enclosure':
-			link_list.append(link.attrib['href'])
+    link_list = []
+    for link in all_links:
+        if link.attrib['rel'] == 'enclosure':
+            link_list.append(link.attrib['href'])
 
-	return link_list
+    return link_list
 
 def run_server():
-	app = Flask(__name__)
+    app = Flask(__name__)
 
-	@app.route('/')
-	def home():
-		return render_template('49_input.html')
+    @app.route('/')
+    def home():
+        return render_template('49_input.html')
 
-	@app.route('/search', methods = ['POST'])
-	def search():
-		search_word = request.form['search_word']
-		make_image_xml_file(flickr_search(search_word))
-		link_list = parse_xml()
-		return render_template('49_output.html', keyword=search_word, link_list=link_list)
+    @app.route('/search', methods = ['POST'])
+    def search():
+        search_word = request.form['search_word']
+        make_image_xml_file(flickr_search(search_word))
+        link_list = parse_xml()
+        return render_template('49_output.html', keyword=search_word, link_list=link_list)
 
-	app.run(port=8001)
+    app.run(port=8001)
 
 def main():
-	run_server()
+    run_server()
 
 if __name__ == "__main__":
-	main()
+    main()

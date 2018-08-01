@@ -1,11 +1,3 @@
-#!/usr/local/bin/python3
-
-# 암호 길이 점검
-
-# 입력: 암호(비밀번호)
-# 프로세스: 암호의 복잡도 계산
-# 출력: 암호의 복잡도
-
 password = input("\npassword: ")
 
 m1 = "\nThe password '" + password + "' is a "
@@ -21,31 +13,31 @@ alphabets = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 symbols = {'!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'}
 
 def is_it_included(string, type_of_data):
-	character_list = []
-	for i in string:
-		if i.lower() in type_of_data:
-			character_list.append(i)
-	if character_list == []:
-		return False
-	else:
-		return True
+    character_list = []
+    for i in string:
+        if i.lower() in type_of_data:
+            character_list.append(i)
+    if character_list == []:
+        return False
+    else:
+        return True
 
 def password_validator(arg):
-	if len(arg) < 8:
-		if arg.isdigit() == True:
-			return message1
-		elif arg.isalpha() == True:
-			return message2
-	else:
-		if is_it_included(arg, numbers) and is_it_included(arg, alphabets):
-			if is_it_included(arg, symbols):
-				return message4
-			else:
-				return message3
+    if len(arg) < 8:
+        if arg.isdigit() == True:
+            return message1
+        elif arg.isalpha() == True:
+            return message2
+    else:
+        if is_it_included(arg, numbers) and is_it_included(arg, alphabets):
+            if is_it_included(arg, symbols):
+                return message4
+            else:
+                return message3
 
 answer = password_validator(password)
 
 if answer == None:
-	answer = message5
+    answer = message5
 
 print(answer)
