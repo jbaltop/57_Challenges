@@ -29,7 +29,7 @@ if css.lower() != 'n':
 
 content = '<!doctype html>\n<html>\n  <head>\n    <meta name="author" content="' + author + '">\n    <title>"' + site + '"</title>\n  </head>\n</html>'
 
-fout = open('{}/index.html'.format(site), 'wt')
+fout = open('{}/index.html'.format(site), 'wt', encoding='utf-8')
 fout.write(content)
 fout.close()
 print(messages["m4"].format(site))

@@ -7,7 +7,7 @@ messages = {
     }
 
 def read_file(filename):
-    fin = open(filename, 'rt')
+    fin = open(filename, 'rt', encoding='utf-8')
     contents = fin.read()
     fin.close()
     return contents
@@ -21,7 +21,7 @@ def replace_word(word1, word2, source):
     return new_content
 
 def write_file(source, filename):
-    fout = open(filename, 'wt')
+    fout = open(filename, 'wt', encoding='utf-8')
     fout.write(source)
     fout.close()
 

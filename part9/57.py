@@ -1,7 +1,7 @@
 import random
 
 def read_question():
-    with open('trivia.txt', 'rt') as fin:
+    with open('trivia.txt', 'rt', encoding='utf-8') as fin:
         questions = fin.read()
         question_list = questions.split('\n')
         question_list.remove('')

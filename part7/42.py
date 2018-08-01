@@ -5,7 +5,7 @@ template = {
 
 def file_to_list(filename):
     lines = []
-    fin = open(filename, 'rt')
+    fin = open(filename, 'rt', encoding='utf-8')
     lines = fin.readlines()
     fin.close()
     return lines

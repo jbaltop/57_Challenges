@@ -8,7 +8,7 @@ messages = {
     "quantity": "Quantity on hand: {}",
     }
 
-fin = open('44.json', 'rt')
+fin = open('44.json', 'rt', encoding='utf-8')
 product_json = fin.read()
 fin.close()
 

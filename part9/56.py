@@ -18,7 +18,7 @@ def get_info():
 
 def make_json_file(info_list):
     n = len(info_list)
-    with open('56.json', 'wt') as fout:
+    with open('56.json', 'wt', encoding='utf-8') as fout:
         fout.write('{"products": [')
         i = 0
         while i < n-1:
@@ -28,7 +28,7 @@ def make_json_file(info_list):
         fout.write(']}')
 
 def make_html_file(product_list):
-    with open('56.html', 'wt') as fout:
+    with open('56.html', 'wt', encoding='utf-8') as fout:
         fout.write('<html>\n  <body>\n    <table border>\n')
         fout.write('      <tr>\n        <th>Name</th>\n        <th>Serial Number</th>\n        <th>Price($)</th>\n      </tr>\n')
         for product in product_list:

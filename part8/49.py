@@ -11,7 +11,7 @@ def flickr_search(search_word):
     return image_xml
 
 def make_image_xml_file(image_xml):
-    fout = open('49.xml', 'wt')
+    fout = open('49.xml', 'wt', encoding='utf-8')
     fout.write(image_xml)
     fout.close
 

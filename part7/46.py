@@ -6,7 +6,7 @@ messages = {
     }
 
 def read_file(filename):
-    fin = open(filename, 'rt')
+    fin = open(filename, 'rt', encoding='utf-8')
     contents = fin.read()
     fin.close()
     return contents
