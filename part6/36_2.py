@@ -1,5 +1,6 @@
+import statistics
+
 def calculate_everything(arg):
-    import statistics
 
     average = statistics.mean(arg)
     minimum = min(arg)
