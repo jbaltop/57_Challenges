@@ -1,19 +1,19 @@
 def main():
-    m0 = "\n질문에 대한 답이 '예'일 경우에는 '1'을, '아니요'일 경우에는 '0'을 누르시오."
-    m1 = "\n단자를 깨끗하게 하고 다시 시도하라."
-    m2 = "\n케이블을 교체하고 다시 시도하라."
-    m3 = "\n배터리를 교체하고 다시 시도하라."
-    m4 = "\n점화플러그 연결 상태를 점검하라."
-    m5 = "\n초크가 제대로 여닫히는지 확인하라."
-    m6 = "\n서비스센터에 의뢰하라."
-    m7 = "\n문제가 없습니다."
+    m0 = "\nIf the answer is 'yes' enter '1', if 'no' enter '0'."
+    m1 = "\nClean terminals and try starting again."
+    m2 = "\nReplace cables and try again."
+    m3 = "\nReplace battery."
+    m4 = "\nCheck spark plug connections."
+    m5 = "\nCheck to ensure the choke is opening and closing."
+    m6 = "\nGet it in for service."
+    m7 = "\nThere is no question."
 
-    q1 = "\n열쇠를 꽂고 돌렸을 때 차가 조용한가? "
-    q2 = "\n배터리 단자가 부식되었는가? "
-    q3 = "\n차에서 딸깍거리는 소리가 나는가? "
-    q4 = "\n시동이 완전히 걸리지 않는가? "
-    q5 = "\n엔진이 동작한 후 바로 꺼지는가? "
-    q6 = "\n차에 연료 분사 장치가 있는가? "
+    q1 = "\nIs the car silent when you turn the key? "
+    q2 = "\nAre the battery terminals corroded? "
+    q3 = "\nDoes the car make a clicking noise? "
+    q4 = "\nDoes the car crank up but fail to start? "
+    q5 = "\nDoes the engine start and then die? "
+    q6 = "\nDoes your car have fuel injection? "
 
     print(m0)
 
