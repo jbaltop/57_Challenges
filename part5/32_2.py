@@ -1,7 +1,9 @@
 import random
 
+
 def random_number(a, b):
     return random.randint(a, b)
+
 
 def compare_number(a, b):
     if a == b:
@@ -12,20 +14,24 @@ def compare_number(a, b):
         else:
             return 2
 
+
 def max_number(a):
     return 10 ** a
+
 
 def is_it_appropriate_number(a, b):
     if a >= 1 and a <= max_number(b):
         return True
     return False
 
+
 def is_it_appropriate_difficulty(a):
     if a >= 1 and a <= 3:
         return True
     return False
 
-def input_integer(messages, message=''):
+
+def input_integer(messages, message=""):
     while True:
         result = input(message)
         if result.isdigit():
@@ -39,20 +45,24 @@ def guess_number(difficulty, answer_number, messages):
     while True:
         input_number = input_integer(messages)
         if is_it_appropriate_number(input_number, difficulty) == False:
-            print(messages["error1"].format("[1, " + str(max_number(difficulty))  + "]"), end='')
+            print(
+                messages["error1"].format("[1, " + str(max_number(difficulty)) + "]"),
+                end="",
+            )
         a = compare_number(input_number, answer_number)
         if a == 0:
             guessed_list.append(input_number)
             break
         else:
             if input_number in guessed_list:
-                print(messages["duplicated"], end='')
+                print(messages["duplicated"], end="")
             if a == 1:
-                print(messages["low"], end='')
+                print(messages["low"], end="")
             else:
-                print(messages["high"], end='')
+                print(messages["high"], end="")
             guessed_list.append(input_number)
     return len(guessed_list)
+
 
 def main():
     messages = {
@@ -80,7 +90,7 @@ def main():
         while True:
             difficulty = input_integer(messages, messages["difficulty"])
             if is_it_appropriate_difficulty(difficulty):
-                print(messages["guess"], end='')
+                print(messages["guess"], end="")
                 break
             print(messages["error2"])
         answer_number = random_number(1, max_number(difficulty))
@@ -96,8 +106,9 @@ def main():
             print(messages["message4"])
 
         c = input(messages["again"])
-        if c == 'n' or c == 'N':
+        if c == "n" or c == "N":
             print(messages["bye"])
             break
+
 
 main()

@@ -1,5 +1,6 @@
 def make_list(arg):
-    return arg.split(' ')
+    return arg.split(" ")
+
 
 def filter_even_numbers(arg):
     even_numbers = []
@@ -7,6 +8,7 @@ def filter_even_numbers(arg):
         if int(i) % 2 == 0:
             even_numbers.append(i)
     return even_numbers
+
 
 def main():
     messages = {
@@ -18,11 +20,12 @@ def main():
 
     even_numbers = filter_even_numbers(make_list(numbers))
 
-    print(messages["even_numbers"], end='')
+    print(messages["even_numbers"], end="")
 
     for even_number in even_numbers:
-        print(even_number, end=' ')
+        print(even_number, end=" ")
 
-    print('\n')
+    print("\n")
+
 
 main()

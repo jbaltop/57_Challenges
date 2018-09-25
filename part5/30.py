@@ -1,5 +1,6 @@
 def print_result(a, b):
-    print("{} * {} = {}".format(a, b, a*b))
+    print("{} * {} = {}".format(a, b, a * b))
+
 
 def main():
     a = 0
@@ -9,5 +10,6 @@ def main():
             print_result(a, b)
             b += 1
         a += 1
+
 
 main()

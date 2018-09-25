@@ -1,5 +1,5 @@
 def validate_name(arg):
-    if arg == '':
+    if arg == "":
         return -1
     else:
         if len(arg) < 2:
@@ -7,8 +7,9 @@ def validate_name(arg):
         else:
             return 1
 
+
 def validate_zip_code(arg):
-    if arg == '':
+    if arg == "":
         return -1
     else:
         if arg.isdigit() == True:
@@ -16,14 +17,21 @@ def validate_zip_code(arg):
         else:
             return 0
 
+
 def validate_employee_id(arg):
-    if arg == '':
+    if arg == "":
         return -1
     else:
-        if len(arg) == 7 and arg[0:1].isalpha() == True and arg[2] == '-' and arg[3:-1].isdigit() == True:
+        if (
+            len(arg) == 7
+            and arg[0:1].isalpha() == True
+            and arg[2] == "-"
+            and arg[3:-1].isdigit() == True
+        ):
             return 1
         else:
             return 0
+
 
 def validate_input(first_name, last_name, zip_code, employee_id):
     m2 = "' is not a valid "
@@ -48,6 +56,7 @@ def validate_input(first_name, last_name, zip_code, employee_id):
     elif validate_employee_id(employee_id) == -1:
         print("\nThe employee ID" + m3)
 
+
 def main():
     q1 = "\nfirst name: "
     q2 = "last name: "
@@ -62,12 +71,18 @@ def main():
         a2 = input(q2)
         a3 = input(q3)
         a4 = input(q4)
-        result = validate_name(a1) + validate_name(a2) + validate_zip_code(a3) + validate_employee_id(a4)
+        result = (
+            validate_name(a1)
+            + validate_name(a2)
+            + validate_zip_code(a3)
+            + validate_employee_id(a4)
+        )
         if result < 4:
             validate_input(a1, a2, a3, a4)
             print("\nPlease try again.")
         else:
             print(m1)
             break
+
 
 main()

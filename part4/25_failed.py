@@ -22,8 +22,10 @@ def password_validator(password):
                 answer = message4
     print(answer)
 
+
 def main():
     password = input("\npassword: ")
     password_validator(password)
+
 
 main()

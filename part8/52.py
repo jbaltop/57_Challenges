@@ -1,10 +1,25 @@
 import urllib.request
 import json
 
+
 def number_to_month(number):
-    month_names = {'1': 'January', '2': 'February', '3': 'March', '4': 'April', '5': 'May', '6': 'June', '7': 'July', '8': 'August', '9': 'September', '10': 'October', '11': 'November', '12': 'December'}
+    month_names = {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December",
+    }
     month = month_names[number]
     return month
+
 
 def main():
     message = "The current time is {}."
@@ -21,5 +36,6 @@ def main():
     result = "{} UTC {} {} {}".format(time, number_to_month(month_number), day, year)
 
     print(message.format(result))
+
 
 main()

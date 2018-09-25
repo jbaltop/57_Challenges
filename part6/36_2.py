@@ -1,12 +1,14 @@
 import statistics
 
+
 def calculate_everything(arg):
 
     average = statistics.mean(arg)
     minimum = min(arg)
     maximum = max(arg)
     standard_deviation = statistics.pstdev(arg)
-    return [ average, minimum, maximum, standard_deviation ]
+    return [average, minimum, maximum, standard_deviation]
+
 
 def make_list(messages):
     n_list = []
@@ -15,10 +17,11 @@ def make_list(messages):
         if input_number.isdigit():
             number = int(input_number)
             n_list.append(number)
-        elif input_number.lower() == 'done':
+        elif input_number.lower() == "done":
             return n_list
         else:
             print(messages["error1"])
+
 
 def main():
     messages = {
@@ -38,8 +41,14 @@ def main():
 
     result = calculate_everything(number_list)
 
-    answer_message =  messages["average"].format(str(result[0])) + messages["minimum"].format(str(result[1])) + messages["maximum"].format(str(result[2])) + messages["standard_deviation"].format(str(result[3]))
+    answer_message = (
+        messages["average"].format(str(result[0]))
+        + messages["minimum"].format(str(result[1]))
+        + messages["maximum"].format(str(result[2]))
+        + messages["standard_deviation"].format(str(result[3]))
+    )
 
     print(answer_message)
+
 
 main()

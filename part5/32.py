@@ -1,7 +1,9 @@
-imoprt random
+import random
+
 
 def random_number(a, b):
     return random.randint(a, b)
+
 
 def compare_number(a, b):
     if int(a) == b:
@@ -12,29 +14,36 @@ def compare_number(a, b):
         else:
             return 2
 
+
 def max_number(a):
     return 10 ** int(a)
+
 
 def is_it_duplicated_number(a, guessed_list):
     if a in guessed_list:
         return True
     return False
 
+
 def how_many_times(guessed_list):
     return len(guessed_list)
+
 
 def is_it_appropriate_number(a, b):
     if a >= 1 and a <= max_number(b):
         return True
     return False
 
+
 def is_it_appropriate_difficulty(a):
-    if a == '1' or a == '2' or a == '3':
+    if a == "1" or a == "2" or a == "3":
         return True
     return False
 
+
 def is_it_number(a):
     return a.isdigit()
+
 
 def guess_number(difficulty, input_number, answer_number, guessed_list):
     guess_result = []
@@ -69,6 +78,7 @@ def guess_number(difficulty, input_number, answer_number, guessed_list):
             guess_result.append("high")
             return guess_result
 
+
 def main():
     messages = {
         "start": "\nLet's play Guess the Number.",
@@ -98,7 +108,7 @@ def main():
         while True:
             difficulty = input(messages["difficulty"])
             if is_it_appropriate_difficulty(difficulty):
-                print(messages["guess"], end='')
+                print(messages["guess"], end="")
                 break
             print(messages["error2"])
         answer_number = random_number(1, max_number(difficulty))
@@ -107,23 +117,29 @@ def main():
             result = guess_number(difficulty, input_number, answer_number, guessed_list)
             guessed_list.append(input_number)
             if result[0] == "error1":
-                print(messages[result[0]].format("[1, " + str(max_number(difficulty))  + "]"), end = '')
+                print(
+                    messages[result[0]].format(
+                        "[1, " + str(max_number(difficulty)) + "]"
+                    ),
+                    end="",
+                )
             elif result[0] == "duplicated":
-                print(messages[result[0]], end='')
-                print(messages[result[1]], end='')
+                print(messages[result[0]], end="")
+                print(messages[result[1]], end="")
             elif result[0] == "low" or result[0] == "high":
-                print(messages[result[0]], end='')
+                print(messages[result[0]], end="")
             elif len(result) == 1:
                 print(messages[result[0]])
             elif result[1] == "correct":
                 print(messages[result[1]].format(how_many_times(guessed_list)))
                 print(messages[result[0]])
                 c = input(messages["again"])
-                if c == 'n' or c == 'N':
+                if c == "n" or c == "N":
                     print(messages["bye"])
                     is_play_again = False
                     break
                 else:
                     break
+
 
 main()

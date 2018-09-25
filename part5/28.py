@@ -1,5 +1,5 @@
 def main():
-    messages = [ "\nEnter a number: ", "\nThe total is {}" ]
+    messages = ["\nEnter a number: ", "\nThe total is {}"]
 
     i = 0
     total = 0
@@ -11,5 +11,6 @@ def main():
     answer = messages[1].format(total)
 
     print(answer)
+
 
 main()

@@ -3,9 +3,11 @@ import json
 import numpy
 import configparser
 
+
 def kelvin_to_celsius(kelvin):
     celsius = kelvin - 273.15
     return round(celsius)
+
 
 def degree_to_azimuth(degree):
     azimuths = {
@@ -25,14 +27,35 @@ def degree_to_azimuth(degree):
         292.5: "west-northwest",
         315: "northwest",
         337.5: "north-northwest",
-        360: "north"
+        360: "north",
     }
 
-    a = numpy.array( [0, 22.5, 45, 67.5, 90, 112.5, 135, 157.5, 180, 202.5, 225, 247.5, 270, 292.5, 315, 337.5, 360] )
+    a = numpy.array(
+        [
+            0,
+            22.5,
+            45,
+            67.5,
+            90,
+            112.5,
+            135,
+            157.5,
+            180,
+            202.5,
+            225,
+            247.5,
+            270,
+            292.5,
+            315,
+            337.5,
+            360,
+        ]
+    )
     idx = (numpy.abs(a - degree)).argmin()
     nearest_degree = a[idx]
     azimuth = azimuths[nearest_degree]
     return azimuth
+
 
 def main():
     message_template = {
@@ -43,12 +66,12 @@ def main():
         "pressure": "\npressure: {}hPa",
         "humidity": "\nhumidity: {}%",
         "wind_speed": "\nwind speed: {}m/s",
-        "wind_direction": "\nwind direction: {}"
+        "wind_direction": "\nwind direction: {}",
     }
 
     config = configparser.ConfigParser()
-    config.read('../private/48.ini')
-    APIKEY = config['openweathermap']['key']
+    config.read("../private/48.ini")
+    APIKEY = config["openweathermap"]["key"]
 
     city_name = input("\nWhere are you? ")
 
@@ -68,15 +91,18 @@ def main():
     wind_speed = weather_dictionary["list"][0]["wind"]["speed"]
     azimuth = degree_to_azimuth(weather_dictionary["list"][0]["wind"]["deg"])
 
-    message = message_template["city"].format(city_name) + \
-        message_template["temp"].format(temp) + \
-        message_template["temp_min"].format(temp_min) + \
-        message_template["temp_max"].format(temp_max) + \
-        message_template["pressure"].format(pressure) + \
-        message_template["humidity"].format(humidity) + \
-        message_template["wind_speed"].format(wind_speed) + \
-        message_template["wind_direction"].format(azimuth)
+    message = (
+        message_template["city"].format(city_name)
+        + message_template["temp"].format(temp)
+        + message_template["temp_min"].format(temp_min)
+        + message_template["temp_max"].format(temp_max)
+        + message_template["pressure"].format(pressure)
+        + message_template["humidity"].format(humidity)
+        + message_template["wind_speed"].format(wind_speed)
+        + message_template["wind_direction"].format(azimuth)
+    )
 
     print(message)
+
 
 main()

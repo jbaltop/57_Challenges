@@ -1,5 +1,10 @@
 def main():
-    messages = [ "\nrate of return(%): ", "\nSorry. That's not a valid input.", "\nIt will take {} years to double your initial investment.", "\nThe rate of return can't be 0%." ]
+    messages = [
+        "\nrate of return(%): ",
+        "\nSorry. That's not a valid input.",
+        "\nIt will take {} years to double your initial investment.",
+        "\nThe rate of return can't be 0%.",
+    ]
 
     def is_valid_input(arg):
         if arg.isdigit():
@@ -21,5 +26,6 @@ def main():
         else:
             answer_message = messages[1]
         print(answer_message)
+
 
 main()

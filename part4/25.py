@@ -8,6 +8,7 @@ def is_it_included(string, type_of_data):
     else:
         return True
 
+
 def password_validator(password):
     m1 = "\nThe password '" + password + "' is a "
     m2 = " password."
@@ -16,11 +17,69 @@ def password_validator(password):
     message3 = m1 + "strong" + m2
     message4 = m1 + "very strong" + m2
 
-    numbers = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
-    alphabets = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-                 'u', 'v', 'w', 'x', 'y', 'z'}
-    symbols = {'!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?',
-               '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'}
+    numbers = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
+    alphabets = {
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o",
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+    }
+    symbols = {
+        "!",
+        '"',
+        "#",
+        "$",
+        "%",
+        "&",
+        "'",
+        "(",
+        ")",
+        "*",
+        "+",
+        ",",
+        "-",
+        ".",
+        "/",
+        ":",
+        ";",
+        "<",
+        "=",
+        ">",
+        "?",
+        "@",
+        "[",
+        "\\",
+        "]",
+        "^",
+        "_",
+        "`",
+        "{",
+        "|",
+        "}",
+        "~",
+    }
 
     if len(password) < 8:
         if password.isdigit():
@@ -33,6 +92,7 @@ def password_validator(password):
                 return message4
             else:
                 return message3
+
 
 def main():
     password = input("\npassword: ")
@@ -47,5 +107,6 @@ def main():
         answer = message5
 
     print(answer)
+
 
 main()

@@ -1,5 +1,6 @@
 import math
 
+
 def calculate_average(arg):
     total = 0
     for number in arg:
@@ -7,13 +8,16 @@ def calculate_average(arg):
     average = total / len(arg)
     return average
 
+
 def calculate_minimum(arg):
     minimum = min(arg)
     return minimum
 
+
 def calculate_maximum(arg):
     maximum = max(arg)
     return maximum
+
 
 def calculate_dispersion(arg):
     average = calculate_average(arg)
@@ -23,6 +27,7 @@ def calculate_dispersion(arg):
         sum = sum + a
     dispersion = sum / len(arg)
     return dispersion
+
 
 def calculate_standard_deviation(arg):
     dispersion = calculate_dispersion(arg)
@@ -35,7 +40,8 @@ def calculate_everything(arg):
     minimum = calculate_minimum(arg)
     maximum = calculate_maximum(arg)
     standard_deviation = calculate_standard_deviation(arg)
-    return [ average, minimum, maximum, standard_deviation ]
+    return [average, minimum, maximum, standard_deviation]
+
 
 def make_list(messages):
     n_list = []
@@ -44,10 +50,11 @@ def make_list(messages):
         if input_number.isdigit():
             number = int(input_number)
             n_list.append(number)
-        elif input_number.lower() == 'done':
+        elif input_number.lower() == "done":
             return n_list
         else:
             print(messages["error1"])
+
 
 def main():
     messages = {
@@ -67,8 +74,14 @@ def main():
 
     result = calculate_everything(number_list)
 
-    answer_message =  messages["average"].format(str(result[0])) + messages["minimum"].format(str(result[1])) + messages["maximum"].format(str(result[2])) + messages["standard_deviation"].format(str(result[3]))
+    answer_message = (
+        messages["average"].format(str(result[0]))
+        + messages["minimum"].format(str(result[1]))
+        + messages["maximum"].format(str(result[2]))
+        + messages["standard_deviation"].format(str(result[3]))
+    )
 
     print(answer_message)
+
 
 main()

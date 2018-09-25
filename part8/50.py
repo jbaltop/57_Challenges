@@ -3,11 +3,12 @@ import json
 import re
 import configparser
 
+
 def main():
     config = configparser.ConfigParser()
-    config.read('../private/50.ini')
+    config.read("../private/50.ini")
 
-    apikey = config['themoviedb']['key']
+    apikey = config["themoviedb"]["key"]
 
     messages = {
         "api": "\nEnter your API key: ",
@@ -21,7 +22,7 @@ def main():
     }
 
     name = input(messages["name"])
-    name = re.sub(' ', '+', name)
+    name = re.sub(" ", "+", name)
 
     url = "https://api.themoviedb.org/3/search/movie?api_key={}&query={}"
     full_url = url.format(apikey, name)
@@ -34,20 +35,23 @@ def main():
     release_date = movie_dictionary["results"][0]["release_date"]
     year = release_date[0:4]
     rating = movie_dictionary["results"][0]["vote_average"]
-    overview= movie_dictionary["results"][0]["overview"]
+    overview = movie_dictionary["results"][0]["overview"]
 
-    message = messages["title"].format(title) + \
-        messages["year"].format(year) + \
-        messages["rating"].format(rating) + \
-        messages["overview"].format(overview)
+    message = (
+        messages["title"].format(title)
+        + messages["year"].format(year)
+        + messages["rating"].format(rating)
+        + messages["overview"].format(overview)
+    )
 
     if rating >= 8:
         message = message + messages["m1"]
     elif rating < 5:
         message = message + messages["m2"]
 
-    message = message + '\n'
+    message = message + "\n"
 
     print(message)
+
 
 main()

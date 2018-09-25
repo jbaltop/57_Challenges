@@ -1,17 +1,18 @@
 import random
 
+
 def main():
     messages = {
         "m1": "Enter a name: ",
         "m2": "\nThe winner is... ",
         "m3": "\nThere is no participant.",
-        }
+    }
 
     participant_list = []
 
     while True:
         name = input(messages["m1"])
-        if name == '':
+        if name == "":
             break
         participant_list.append(name)
 
@@ -22,5 +23,6 @@ def main():
         answer_message = messages["m2"] + participant_list[winner_id]
 
     print(answer_message)
+
 
 main()

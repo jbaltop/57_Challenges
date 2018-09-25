@@ -18,4 +18,5 @@ def main():
         print("tip:", "$", tip)
         print("total:", "$", total)
 
+
 main()

@@ -8,8 +8,16 @@ def main():
     else:
         d = (b * c) // a
         e = b * c - a * d
-        result = "\nEach Person gets " + str(d) + " piece(s) of pizza." + "\nThere are " + str(e) + " leftover piece(s)."
+        result = (
+            "\nEach Person gets "
+            + str(d)
+            + " piece(s) of pizza."
+            + "\nThere are "
+            + str(e)
+            + " leftover piece(s)."
+        )
 
     print(result)
+
 
 main()

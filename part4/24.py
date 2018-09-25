@@ -9,6 +9,7 @@ def is_anagram(a, b):
     else:
         return -1
 
+
 def main():
     result = -1
     while result < 0:
@@ -29,5 +30,6 @@ def main():
             answer = answer + "\nPlease enter two strings with the same length."
 
         print(answer)
+
 
 main()

@@ -5,9 +5,9 @@ def main():
     h = float(input("elapsed time to drink alcohol(h): "))
     bac_limit = 0.08
 
-    if g.lower() == 'm' or g.lower() == "male":
+    if g.lower() == "m" or g.lower() == "male":
         r = 0.73
-    elif g.lower() == 'f' or g.lower() == "female":
+    elif g.lower() == "f" or g.lower() == "female":
         r = 0.6
     else:
         print("please enter a correct gender.")
@@ -25,5 +25,6 @@ def main():
         message2 = "\nIt is not legal for you to drive."
 
     print(message1, message2)
+
 
 main()

@@ -8,11 +8,29 @@ def main():
     subtraction = a - b
     multiplication = a * b
     if b == 0:
-        result = "\nAddition: " + str(addition) + "\nSubtraction: " + str(subtraction) + "\nMultiplication: " + str(multiplication) + "\nDivision: N/A"
+        result = (
+            "\nAddition: "
+            + str(addition)
+            + "\nSubtraction: "
+            + str(subtraction)
+            + "\nMultiplication: "
+            + str(multiplication)
+            + "\nDivision: N/A"
+        )
     else:
         division = a / b
-        result = "\nAddition: " + str(addition) + "\nSubtraction: " + str(subtraction) + "\nMultiplication: " + str(multiplication) + "\nDivision: " + str(division)
+        result = (
+            "\nAddition: "
+            + str(addition)
+            + "\nSubtraction: "
+            + str(subtraction)
+            + "\nMultiplication: "
+            + str(multiplication)
+            + "\nDivision: "
+            + str(division)
+        )
 
     print(result)
+
 
 main()

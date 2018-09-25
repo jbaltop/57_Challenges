@@ -4,8 +4,15 @@ def main():
 
     square_feet = length * width
     square_meter = square_feet * 0.09290304
-    result = "\nThe area is\n" + str(square_feet) + " square feet\n" + str(square_meter) + " square meter(s)."
+    result = (
+        "\nThe area is\n"
+        + str(square_feet)
+        + " square feet\n"
+        + str(square_meter)
+        + " square meter(s)."
+    )
 
     print(result)
+
 
 main()
